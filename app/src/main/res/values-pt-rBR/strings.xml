@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Test</string>
+    <string name="profile">Perfil</string>
+    <string name="profile_details">Detalhes do Perfil</string>
+    <string name="name">Nome</string>
+    <string name="address">Endereço</string>
+    <string name="open_maps">Abrir Maps</string>
+</resources>

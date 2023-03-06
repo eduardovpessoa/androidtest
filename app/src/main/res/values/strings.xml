@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android Test</string>
+    <string name="profile">Profile</string>
+    <string name="profile_details">Profile Details</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="open_maps">Open Maps</string>
+</resources>
