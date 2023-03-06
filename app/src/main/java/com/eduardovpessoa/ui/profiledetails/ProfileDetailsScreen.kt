@@ -5,18 +5,25 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Map
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.eduardovpessoa.R
 import com.eduardovpessoa.data.dto.Profile
 import com.eduardovpessoa.ui.composables.DivvyToolbar
@@ -52,6 +59,16 @@ fun ProfileDetailsScreenInfo(profile: Profile, paddingValues: PaddingValues) {
             .fillMaxWidth()
             .padding(top = paddingValues.calculateTopPadding(), start = 16.dp, end = 16.dp)
     ) {
+        Spacer(modifier = Modifier.height(8.dp))
+        AsyncImage(
+            model = ImageRequest.Builder(LocalContext.current)
+                .data(profile.picture.orEmpty())
+                .crossfade(true)
+                .build(),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.clip(CircleShape).align(Alignment.CenterHorizontally)
+        )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = stringResource(R.string.name),

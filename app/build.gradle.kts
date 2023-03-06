@@ -59,6 +59,7 @@ android {
 }
 
 dependencies {
+    val coilVersion = "2.2.2"
     val composeActivityVersion = "1.6.1"
     val composeVersion = "1.4.0-alpha03"
     val coreKtxVersion = "1.9.0"
@@ -88,8 +89,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleRuntimeVersion")
     implementation("androidx.navigation:navigation-compose:$navVersion")
 
-    // Compose Charts
-    implementation("io.github.bytebeats:compose-charts:$composeCharts")
+    // Coil Compose
+    implementation("io.coil-kt:coil-compose:$coilVersion")
 
     // Debug
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
