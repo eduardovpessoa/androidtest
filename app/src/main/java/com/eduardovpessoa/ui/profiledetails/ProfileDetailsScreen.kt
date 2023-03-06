@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.eduardovpessoa.R
 import com.eduardovpessoa.data.dto.Profile
-import com.eduardovpessoa.data.dto.Profiles
 import com.eduardovpessoa.ui.composables.DivvyToolbar
 import java.util.*
 
@@ -65,13 +64,59 @@ fun ProfileDetailsScreenInfo(profile: Profile, paddingValues: PaddingValues) {
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
+            text = stringResource(R.string.title),
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = profile.title.orEmpty(),
+            fontSize = 18.sp,
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = stringResource(R.string.phone),
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = profile.phone.orEmpty(),
+            fontSize = 18.sp,
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = stringResource(R.string.email),
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
+            maxLines = 1
+        )
+        Text(
+            text = profile.email.orEmpty(),
+            fontSize = 18.sp,
+            maxLines = 2,
+            modifier = Modifier.fillMaxWidth(),
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = stringResource(R.string.birthday),
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
+            maxLines = 1
+        )
+        Text(
+            text = profile.birthday.orEmpty(),
+            fontSize = 18.sp,
+            maxLines = 2,
+            modifier = Modifier.fillMaxWidth(),
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
             text = stringResource(R.string.address),
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             maxLines = 1
         )
         Text(
-            text = profile.street.orEmpty(),
+            text = profile.formatAddress(),
             fontSize = 18.sp,
             maxLines = 2,
             modifier = Modifier.fillMaxWidth(),
@@ -81,7 +126,7 @@ fun ProfileDetailsScreenInfo(profile: Profile, paddingValues: PaddingValues) {
             modifier = Modifier.align(CenterHorizontally),
             onClick = {
                 // Display a label at the location of Google's Sydney office
-                val gmmIntentUri = Uri.parse("geo:0,0?q=${"address"}")
+                val gmmIntentUri = Uri.parse("geo:0,0?q=${profile.formatAddress()}")
                 val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
                 mapIntent.setPackage("com.google.android.apps.maps")
                 context.startActivity(mapIntent)

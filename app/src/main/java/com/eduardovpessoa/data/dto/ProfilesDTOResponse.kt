@@ -40,4 +40,6 @@ data class Profile(
 
     @SerialName("Picture")
     val picture: String? = null
-)
+){
+    internal fun formatAddress() : String = "${this.street}, ${this.city} - ${this.state}, ${this.zipcode}"
+}

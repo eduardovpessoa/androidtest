@@ -5,4 +5,8 @@
     <string name="name">Name</string>
     <string name="address">Address</string>
     <string name="open_maps">Open Maps</string>
+    <string name="title">Title</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="birthday">Birthday</string>
 </resources>

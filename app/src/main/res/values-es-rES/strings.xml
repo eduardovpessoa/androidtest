@@ -6,4 +6,8 @@
     <string name="name">Nombre</string>
     <string name="address">Address</string>
     <string name="open_maps">Abrir Maps</string>
+    <string name="title">Título</string>
+    <string name="phone">Número de Teléfono</string>
+    <string name="email">Email</string>
+    <string name="birthday">Fecha de Nascimiento</string>
 </resources>
